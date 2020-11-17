@@ -19,8 +19,4 @@
     <ProjectReference Include="..\UserManagement.Domain\UserManagement.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="User\Commands\" />
-  </ItemGroup>
-
 </Project>
