@@ -1,1 +1,240 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* Provide sufficient contrast against white background */
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100% !important;
+}
+
+/*Custom*/
+
+.section-padding {
+  padding-top: 25px;
+}
+
+mat-card {
+  margin: 0px !important;
+  padding: 0px !important;
+  background: rgb(253, 253, 253) !important;
+}
+
+mat-card-noshadow {
+  background: #ececf4;
+  box-shadow: none !important;
+}
+
+mat-card-header {
+  background: #0a5b97;
+  border-bottom: 5px solid #bbd1f1;
+  height: 50px;
+  padding-left: 5px;
+}
+
+mat-card-title {
+  vertical-align: baseline;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  font-size: 14pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+
+mat-card-content {
+  padding: 10px;
+  padding-left: 17px;
+  padding-bottom: 5px;
+  color: #000 !important;
+}
+
+.mat-card-popup-width {
+  width: 95vw !important;
+}
+
+mat-grid-tile {
+  padding-bottom: 20px !important;
+}
+
+mat-grid-tile .mat-figure {
+  align-items: flex-start !important;
+  height: 100% !important;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.dialog-footer {
+  padding-top: 10px;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.footer
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: right;
+}
+
+.progress-loader
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999999999;
+}
+
+.overlay{
+   height:100vh;
+   width:100%;
+  background-color:rgba(207, 203, 203, 0.286);
+  z-index:    9999999;
+  top:        0; 
+  left:       0; 
+  position:   fixed; 
+}
+/*Custom*/
+
+/******************Form**************************/
+
+.frm-ctrl {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+/******************End Form**************************/
+
+
+/******************Button**************************/
+
+button {
+  width: 100px;
+  outline: none !important;
+}
+
+.button-lg {
+  width: 165px;
+}
+
+.button-ex-lg {
+  width: 300px;
+}
+
+/******************End Button**************************/
+
+/******************Padding**************************/
+
+.padding-15 {
+  padding: 15px;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.padding-left-10
+{
+ padding-left: 10px;
+}
+
+.padding-bottom-15
+{
+  padding-bottom: 15px;
+}
+
+.padding-bottom-10
+{
+  padding-bottom: 10px;
+}
+
+.padding-top-5
+{
+  padding-top: 5px;
+}
+
+.padding-top-15
+{
+  padding-top: 15px;
+}
+
+/******************End Padding*************************/
+
+/******************File Upload**************************/
+input[type=file] {
+  cursor: pointer;
+  width: 180px;
+  height: 34px;
+  overflow: hidden;
+}
+
+input[type=file]:before {
+  width: 180px;
+  height: 35px;
+  line-height: 32px;
+  content: 'Select File to Upload';
+  display: inline-block;
+  background: #3F51B5;
+  border: 1px solid rgb(53, 69, 160);
+  padding: 0 10px;
+  text-align: center;
+  color:#fff;
+  border-radius: 2px;
+  font-size: 11pt;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.upload-file-name
+{
+  padding-left:10px;
+  padding-top: 5px;
+  font-size: 12pt;
+}
+
+/******************End File Upload*********************/
+
+
+/******************Show Scrollbar for Modal*********************/
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  overflow: auto;
+  pointer-events: auto;
+}
+
+/******************End Show Scrollbar for Modal*********************/
+
+.error-msg
+{
+  font-size: 12pt;
+  color:#02101b;
+}
+
+/******************Custom Error Message for Form*********************/
+
+.custom-error-msg
+{
+  font-size: 11px;
+}
+
+/******************End Custom Error Message for Form*********************/
