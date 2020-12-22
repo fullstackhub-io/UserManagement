@@ -1,11 +1,11 @@
-﻿using Shouldly;
-using System.Linq;
-using UserManagement.Application.Common.Interfaces;
-using UserManagement.Application.User.Commands;
-using Xunit;
-
-namespace UserManagement.ApplicationTests.User.Commands
+﻿namespace UserManagement.ApplicationTests.User.Commands
 {
+    using Shouldly;
+    using System.Linq;
+    using UserManagement.Application.Common.Interfaces;
+    using UserManagement.Application.User.Commands;
+    using Xunit;
+
     [Collection("UserCollection")]
     public class AddUserCommandValidatorTest
     {

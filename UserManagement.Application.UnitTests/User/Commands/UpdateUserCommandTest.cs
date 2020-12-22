@@ -1,15 +1,14 @@
-﻿using AutoMapper;
-using Shouldly;
-using System.Threading;
-using System.Threading.Tasks;
-using UserManagement.Application.Common.Interfaces;
-using UserManagement.Application.User.Commands;
-using UserManagement.Domain.UnitOfWork;
-using Xunit;
-
-
-namespace UserManagement.ApplicationTests.User.Commands
+﻿namespace UserManagement.ApplicationTests.User.Commands
 {
+    using AutoMapper;
+    using Shouldly;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using UserManagement.Application.Common.Interfaces;
+    using UserManagement.Application.User.Commands;
+    using UserManagement.Domain.UnitOfWork;
+    using Xunit;
+
     [Collection("UserCollection")]
     public class UpdateUserCommandTest
     {
