@@ -1,0 +1,71 @@
+.condition-header {
+    background-color: rgb(245, 245, 245) !important;
+    border-bottom: 1px solid rgb(232, 232, 232) !important;
+  }
+  
+  .condtion-header {
+    font-size: 14pt !important;
+    color: #221b1b;
+  }
+  
+  .search-button{
+    width:85px;
+  }
+  
+  .clear-button{
+    width:30px; 
+    text-align: right;
+  }
+  
+  
+  
+  /* Structure */
+  .example-container {
+    position: relative;
+    /* min-height: 200px; */
+  }
+  
+  .example-table-container {
+    position: relative;
+   /*  max-height: 200px; */
+    overflow-y: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-rate-limit-reached {
+    color: #980000;
+    max-width: 360px;
+    text-align: center;
+  }
+  
+  /* Column Widths */
+  .mat-column-rentKey ,
+  .mat-column-rentLoc,
+  .mat-column-rentFloor,
+  .mat-column-rentOffice,
+  .mat-column-empID,
+  .mat-column-rentSqft,
+  .mat-column-owningOrg
+  {
+    max-width: 90px !important;
+  }
+  
+  .mat-column-created {
+    max-width: 124px;
+  }

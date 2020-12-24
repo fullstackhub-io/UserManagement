@@ -1,13 +1,16 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace UserManagement.API
 {
+    using FluentValidation.AspNetCore;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SpaServices.AngularCli;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using UserManagement.API.Filters;
+    using UserManagement.Application;
+    using UserManagement.Persistence;
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,12 +23,35 @@ namespace UserManagement.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddApplication();
+            services.AddPersistance();
+
+            services.AddHttpContextAccessor();
+
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilterAttribute()))
+                    .AddFluentValidation();
+
+            services.AddRazorPages();
+
+            // Customise default API behaviour
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddOpenApiDocument(configure =>
+            {
+                configure.Title = "UserManagement API";
+            });
+
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +75,12 @@ namespace UserManagement.API
                 app.UseSpaStaticFiles();
             }
 
+            app.UseSwaggerUi3(settings =>
+            {
+                settings.Path = "/api";
+                settings.DocumentPath = "/api/specification.json";
+            });
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -56,6 +88,7 @@ namespace UserManagement.API
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
 
             app.UseSpa(spa =>
