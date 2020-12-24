@@ -36,7 +36,7 @@
         {
             var userId = await AddNewUser();
             var res = await userRepository.GetUser(userId);
-            res.ShouldBeOfType<Domain.Entities.User>();
+            res.ShouldBeOfType<UserManagement.Domain.Entities.User>();
         }
 
 
@@ -52,8 +52,8 @@
                 Country = "USA",
                 State = "VA",
                 Zip = "22044",
-                DateAdded = new DateTime(2019, 01, 01),
-                DOB = new DateTime(1980, 01, 01),
+                DateAdded = new System.DateTime(2019, 01, 01),
+                DOB = new System.DateTime(1980, 01, 01),
                 EmailAddress = "jdoe@fullstackhub.io",
                 Gender = "F",
                 PhoneNumber = "000-000-000",
@@ -82,8 +82,8 @@
                 Country = "USA",
                 State = "VA",
                 Zip = "22044",
-                DateAdded = new DateTime(2019, 01, 01),
-                DOB = new DateTime(1980, 01, 01),
+                DateAdded = new System.DateTime(2019, 01, 01),
+                DOB = new System.DateTime(1980, 01, 01),
                 EmailAddress = "jdoe@fullstackhub.io",
                 Gender = "M",
                 PhoneNumber = "444-443-4444"
